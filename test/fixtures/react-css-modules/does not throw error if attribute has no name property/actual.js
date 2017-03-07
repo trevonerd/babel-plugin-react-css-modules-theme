@@ -1,4 +1,4 @@
-import './bar.css';
+import './actual.css';
 
 const props = {
   foo: 'bar'

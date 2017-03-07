@@ -1,7 +1,7 @@
-import './bar.css';
+import './actual.css';
 
 const props = {
   foo: 'bar'
 };
 
-<div className="bar__a" {...props}></div>;
+<div className="actual__a" {...props}></div>;

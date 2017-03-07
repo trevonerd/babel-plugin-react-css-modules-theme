@@ -1,3 +1,3 @@
-import foo from './bar.css';
+import foo from './actual.css';
 
-<div className="bar__a"></div>;
+<div className="actual__a"></div>;

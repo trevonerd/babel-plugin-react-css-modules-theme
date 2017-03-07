@@ -1,6 +1,48 @@
 {
   "extends": [
-    "canonical"
+    "standard",
+    "standard-react"
   ],
-  "root": true
+  "rules": {
+    "semi": 0,
+    "react/jsx-indent": [
+      "error",
+      4
+    ],
+    "space-before-function-paren": [
+      "error",
+      {
+        "anonymous": "always",
+        "named": "never"
+      }
+    ],
+    "indent": [
+      "warn",
+      4,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "no-alert": [
+      "error"
+    ],
+    "no-empty-function": [
+      "error"
+    ],
+    "no-eval": [
+      "error"
+    ],
+    "no-unused-vars": [
+      "error"
+    ],
+    "strict": [
+      "error",
+      "function"
+    ],
+    "jsx-quotes": [
+      "error",
+      "prefer-double"
+    ],
+    "react/jsx-indent-props": "off"
+  }
 }

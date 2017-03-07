@@ -183,27 +183,13 @@ export default ({
 
     let styleImportName: string;
 
-    if (path.node.specifiers.length === 0) {
-      // eslint-disable-next-line no-process-env
-      styleImportName = process.env.NODE_ENV === 'test' ? 'random-test' : 'random-' + Math.random();
-    } else if (path.node.specifiers.length === 1) {
-      styleImportName = path.node.specifiers[0].local.name;
-    } else {
-      // eslint-disable-next-line no-console
-      console.warn('Please report your use case. https://github.com/gajus/babel-plugin-react-css-modules/issues/new?title=Unexpected+use+case.');
-
-      throw new Error('Unexpected use case.');
-    }
+    styleImportName = process.env.NODE_ENV === 'test' ? 'random-test' : 'random-' + Math.random();
 
     filenameMap[filename].styleModuleImportMap[styleImportName] = requireCssModule(targetResourcePath, {
       context: stats.opts.context,
       filetypes: stats.opts.filetypes || {},
       generateScopedName: stats.opts.generateScopedName
     });
-
-    if (stats.opts.webpackHotModuleReloading) {
-      addWebpackHotModuleAccept(path);
-    }
   };
 
   return {

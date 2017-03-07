@@ -1,9 +1,9 @@
-import './bar.css';
+import './actual.css';
 
 if (module.hot) {
-  module.hot.accept('./bar.css', function () {
-    require('./bar.css');
+  module.hot.accept('./actual.css', function () {
+    require('./actual.css');
   });
 }
 
-<div className="bar__a"></div>;
+<div className="actual__a"></div>;

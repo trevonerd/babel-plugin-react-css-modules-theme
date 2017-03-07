@@ -1,4 +1,4 @@
-import './bar.css';
+import './actual.css';
 
 <div className='apple banana' styleName="a"></div>;
 
