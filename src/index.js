@@ -167,13 +167,14 @@ export default ({
 
     // check if the relative css was imported.
     if (!_.includes(cssImported, `${stats.file.opts.basename}.css`)) {
+      filesProcessed, cssImported = [];
       throw new Error(`Missing CSS file for this component: ${stats.file.opts.basename}. Please add import ${stats.file.opts.basename}.css somewhere :)`);
     }
 
     let targetFileDirectoryPath = dirname(stats.file.opts.filename);
 
     if (stats.opts.themePath) {
-      const tempTargetFileDirectoryPath = resolve(stats.opts.themePath, path.node.source.value);
+      const tempTargetFileDirectoryPath = resolve(stats.opts.themePath, `${stats.file.opts.basename}.css`);
       if (existsSync(tempTargetFileDirectoryPath)) {
         targetFileDirectoryPath = stats.opts.themePath;
       }

@@ -45,15 +45,19 @@ export default (styleNameValue: string, styleModuleImportMap: StyleModuleImportM
         return getClassNameForNamespacedStyleName(styleName, styleModuleImportMap);
       }
 
-      if (styleModuleImportMapKeys.length === 0) {
-        throw new Error('Cannot use styleName attribute without importing at least one stylesheet.');
-      }
+      // if (styleModuleImportMapKeys.length === 0) {
+      //   throw new Error('Cannot use styleName attribute without importing at least one stylesheet.');
+      // }
 
       if (styleModuleImportMapKeys.length > 1) {
         throw new Error('Cannot use anonymous style name with more than one stylesheet import.');
       }
 
       const styleModuleMap: StyleModuleMapType = styleModuleImportMap[styleModuleImportMapKeys[0]];
+
+      if (!styleModuleMap || !styleModuleMap[styleName]) {
+        throw new Error('Could not resolve the styleName \'' + styleName + '\'. Please rebuild!');
+      }
 
       if (!styleModuleMap[styleName]) {
         throw new Error('Could not resolve the styleName \'' + styleName + '\'.');

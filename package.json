@@ -55,11 +55,11 @@
     "url": "https://github.com/gajus/babel-plugin-react-css-modules"
   },
   "scripts": {
-    "build-helper": "mkdir -p ./dist/browser && NODE_ENV=production babel ./src/getClassName.js --out-file ./dist/browser/getClassName.js --source-maps --no-babelrc --plugins transform-es2015-modules-commonjs,transform-flow-strip-types --presets es2015",
-    "build": "rm -fr ./dist && NODE_ENV=production babel ./src --out-dir ./dist --source-maps --copy-files && npm run build-helper",
+    "build-helper": "mkdir -p ./dist/browser && cross-env NODE_ENV=production babel ./src/getClassName.js --out-file ./dist/browser/getClassName.js --source-maps --no-babelrc --plugins transform-es2015-modules-commonjs,transform-flow-strip-types --presets es2015",
+    "build": "rm -fr ./dist && cross-env NODE_ENV=production babel ./src --out-dir ./dist --source-maps --copy-files && npm run build-helper",
     "lint": "eslint ./src",
     "precommit": "npm run test",
-    "test": "NODE_ENV=development npm run build && NODE_ENV=test mocha --compilers js:babel-register && flow"
+    "test": "cross-env NODE_ENV=development npm run build && cross-env NODE_ENV=test mocha --compilers js:babel-register && flow"
   },
   "version": "1.0.0"
 }
