@@ -50,7 +50,7 @@
   ],
   "license": "BSD-3-Clause",
   "main": "dist/index.js",
-  "name": "babel-plugin-react-css-module-theme",
+  "name": "babel-plugin-react-css-modules-theme",
   "repository": {
     "type": "git",
     "url": "https://github.com/trevonerd/babel-plugin-react-css-modules-theme"
